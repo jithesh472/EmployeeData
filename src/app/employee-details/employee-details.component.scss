@@ -1,0 +1,15 @@
+.example-card {
+    max-width: 200px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../assets/download.jpeg');
+    background-size: cover;
+  }
+  .user-profile-image{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-top: 10px !important;
+    border: 6px solid #4e4e4e;
+  }
