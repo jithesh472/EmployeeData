@@ -1,81 +1,36 @@
-<div class="main-div">
-    <mat-card class="z-depth center" flex="50">
-        <mat-card-title>Employee Details</mat-card-title>
-        <mat-card-subtitle>Enter employee details</mat-card-subtitle>
-        <mat-card-content style="align-content: center;">
-            <form>
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="First Name" [formControl]="inputFormControl">
-                    <mat-error *ngIf="inputFormControl.hasError('required')">
-                        First Name is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
+<div class="content">
+    <h5>Welcome</h5>
+    <mat-grid-list cols="3">
+        <mat-grid-tile>
+            <div class="card" [routerLink]="['/addEmployee'] ">
+                <div class="media media--16-9"> <img
+                        src="https://media.pixeltuner.de/wp-content/uploads/2018/06/Shapes-Abstraction-Background-2466799.jpg"
+                        alt="" width="640" height="426"> </div>
+                <div class="primary-title">
+                    <div class="primary-text">New Employee</div>
+                    <div class="secondary-text">Register new employee </div>
+                </div>
+                <div class="supporting-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                    unknown printer employeeDetails
+                </div>
+            </div>
+        </mat-grid-tile>
 
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Middle Name">
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Last Name" [formControl]="inputFormControl">
-                    <mat-error *ngIf="inputFormControl.hasError('required')">
-                        Last Name is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width" [formControl]="inputFormControl">
-                    <textarea matInput placeholder="Permanent address"></textarea>
-                    <mat-error *ngIf="inputFormControl.hasError('required')">
-                        Permanent address is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width">
-                    <textarea matInput placeholder="Present address"></textarea>
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="City" [formControl]="inputFormControl">
-                    <mat-error *ngIf="inputFormControl.hasError('required')">
-                        City is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="State" [formControl]="inputFormControl">
-                    <mat-error *ngIf="inputFormControl.hasError('required')">
-                        State is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Country" [formControl]="inputFormControl">
-                    <mat-error *ngIf="inputFormControl.hasError('required')">
-                        Country is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email" [formControl]="emailFormControl">
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                        Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
-                        Email is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Mobile Number" [formControl]="inputFormControl">
-                        <mat-error *ngIf="inputFormControl.hasError('required')">
-                            Mobile Number is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-    
-
-
-            </form>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button>Submit</button>
-            <button mat-raised-button>Cancel </button>
-        </mat-card-actions>
-    </mat-card>
+        <mat-grid-tile>
+            <div class="card" [routerLink]="['/employeeDetails']">
+                <div class="media media--16-9"> <img
+                        src="https://media.pixeltuner.de/wp-content/uploads/2018/06/Shapes-Abstraction-Background-2466799.jpg"
+                        alt="" width="640" height="426"> </div>
+                <div class="primary-title">
+                    <div class="primary-text">Employee Details</div>
+                    <div class="secondary-text">View all employee details </div>
+                </div>
+                <div class="supporting-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                    unknown printer
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>

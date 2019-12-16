@@ -1,0 +1,29 @@
+<div class="main-div">
+    <mat-card class="z-depth center card-background-color" >
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content >
+            <mat-grid-list cols="1" rowHeight="90px">
+                <mat-grid-tile>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Username" [formControl]="usernameControl">
+                        <mat-error *ngIf="usernameControl.hasError('required')">
+                            Username is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="example-full-width">
+                        <input matInput type="password" placeholder="Password" [formControl]="passwordControl">
+                        <mat-error *ngIf="passwordControl.hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>                
+            </mat-grid-list>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button primary [routerLink]="['/home'] ">Login</button>
+        </mat-card-actions>
+    </mat-card>  
+</div>
+
