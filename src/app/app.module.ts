@@ -6,10 +6,12 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // tslint:disable-next-line:max-line-length
-import { MatButtonModule, MatFormFieldModule,  MatInputModule,  MatRippleModule, MatCardModule, MatGridListModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule,  MatInputModule,
+  MatRippleModule, MatCardModule, MatGridListModule, MatDialogModule,
+  MatExpansionModule, MatDividerModule, MatListModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { AddEmployeeComponent } from './addEmployee/addEmployee.component';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeeDetailsComponent, DialogContentExampleDialog } from './employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
     HomeComponent,
     LoginComponent,
     AddEmployeeComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    DialogContentExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,11 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
     MatInputModule,
     MatRippleModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatDividerModule,
+    MatListModule
 
   ],
   exports: [
@@ -39,9 +46,16 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
     MatInputModule,
     MatRippleModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatDividerModule,
   ],
-  providers: [],
+  entryComponents: [
+    EmployeeDetailsComponent, DialogContentExampleDialog
+  ],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
