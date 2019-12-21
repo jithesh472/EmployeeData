@@ -11,8 +11,7 @@ import { MatButtonModule, MatFormFieldModule,  MatInputModule,
   MatExpansionModule, MatDividerModule, MatListModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { AddEmployeeComponent } from './addEmployee/addEmployee.component';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
-import { EmployeeDetailsPopupComponent } from './employee-details-popup/employee-details-popup.component';
+import { EmployeeDetailsComponent, DialogDataExampleDialog } from './employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { EmployeeDetailsPopupComponent } from './employee-details-popup/employee
     LoginComponent,
     AddEmployeeComponent,
     EmployeeDetailsComponent,
-    EmployeeDetailsPopupComponent
+    DialogDataExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -53,7 +52,9 @@ import { EmployeeDetailsPopupComponent } from './employee-details-popup/employee
     MatDividerModule,
   ],
   entryComponents: [
-    EmployeeDetailsComponent,EmployeeDetailsPopupComponent
+    EmployeeDetailsComponent,
+    DialogDataExampleDialog
+
   ],
   providers: [
   ],

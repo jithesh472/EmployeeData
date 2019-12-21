@@ -1,19 +1,18 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { inject } from '@angular/core/testing';
-import { inherits } from 'util';
-import { EmployeeDetailsPopupComponent } from '../employee-details-popup/employee-details-popup.component';
 
-// let employeeData: any = '';
+export interface DialogData {
+  employeeData: any;
+  animal: 'panda' | 'unicorn' | 'lion';
+}
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
   styleUrls: ['./employee-details.component.scss']
 })
 export class EmployeeDetailsComponent implements OnInit {
-  // public employeeData: any;
-  employeeData : any ="default" ;
-  constructor(public dialog: MatDialog) { }
+ 
+  constructor(public dialog: MatDialog) {}
   public  employeeDetails = [
     {
       ProfileImage: '../../assets/download.jpeg',
@@ -336,44 +335,26 @@ export class EmployeeDetailsComponent implements OnInit {
       Pin: 504458
     },
   ];
-  openDialog(param) {
 
-    this.employeeData = param; 
-    this.dialog.open(EmployeeDetailsPopupComponent);
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+  openDialog( params :any ) {
+    this.dialog.open(DialogDataExampleDialog, {
+      data: {
+        employeeData: params
+      }
+    });
   }
-  ngOnInit() {
+  ngOnInit(){
   }
 
 }
-// @Component({
-//   // tslint:disable-next-line:component-selector
-//   selector: 'employee-details-popup',
-//   templateUrl: 'employee-details-popup.html',
-//   styleUrls: ['./employee-details.component.scss']
-// })
-// // tslint:disable-next-line:component-class-suffix
-// class DialogContentExampleDialog  implements EmployeeDetailsComponent{
-//   constructor() {}
-
-  
-//   // public employeeData = {
-//   //   City: 'Banglore ',
-//   //   Country: 'India',
-//   //   CurrentAddress: '#21 , 2nd floor, 3rd Crossroad, Marthahalli, Banglore , Karnataka',
-//   //   // tslint:disable-next-line:max-line-length
-//   //   Description: 'Lorem Ipsum industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-//   //   FirstName: 'Joseph',
-//   //   Gender: 'Male',
-//   //   LastName: 'L',
-//   //   MiddleName: 'Jorge',
-//   //   PermenentAddress: '#21 , 2nd floor, 3rd Crossroad, Marthahalli, Banglore , Karnataka',
-//   //   Pin: 504458,
-//   //   Possition: 'Mobile Developer',
-//   //   ProfileImage: '../../assets/download.jpeg',
-//   //   State: 'Karnataka',
-//   // };
-
-// }
+@Component({
+  selector: 'employee-detail-popup',
+  templateUrl: 'employee-details-popup.html',
+})
+export class DialogDataExampleDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  public employeeData = this.data.employeeData;
+  ngOnInit(){
+    
+  }
+}
