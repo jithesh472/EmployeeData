@@ -1,5 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { inject } from '@angular/core/testing';
+import { inherits } from 'util';
+import { EmployeeDetailsPopupComponent } from '../employee-details-popup/employee-details-popup.component';
 
 // let employeeData: any = '';
 @Component({
@@ -9,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class EmployeeDetailsComponent implements OnInit {
   // public employeeData: any;
-
+  employeeData : any ="default" ;
   constructor(public dialog: MatDialog) { }
   public  employeeDetails = [
     {
@@ -334,43 +337,43 @@ export class EmployeeDetailsComponent implements OnInit {
     },
   ];
   openDialog(param) {
-    // this.employeeData = param;
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
-    dialogRef.afterClosed().subscribe(result => {
-      // tslint:disable-next-line:new-parens
-      const a: any = new DialogContentExampleDialog;
-      a.employeeData = param;
-      console.log(`Dialog result: ${result}`);
-    });
+
+    this.employeeData = param; 
+    this.dialog.open(EmployeeDetailsPopupComponent);
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
   ngOnInit() {
   }
 
 }
-@Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'employee-details-popup',
-  templateUrl: 'employee-details-popup.html',
-  styleUrls: ['./employee-details.component.scss']
-})
-// tslint:disable-next-line:component-class-suffix
-export class DialogContentExampleDialog  {
-  constructor() {}
-  public employeeData = {
-    City: 'Banglore ',
-    Country: 'India',
-    CurrentAddress: '#21 , 2nd floor, 3rd Crossroad, Marthahalli, Banglore , Karnataka',
-    // tslint:disable-next-line:max-line-length
-    Description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-    FirstName: 'Joseph',
-    Gender: 'Male',
-    LastName: 'L',
-    MiddleName: 'Jorge',
-    PermenentAddress: '#21 , 2nd floor, 3rd Crossroad, Marthahalli, Banglore , Karnataka',
-    Pin: 504458,
-    Possition: 'Mobile Developer',
-    ProfileImage: '../../assets/download.jpeg',
-    State: 'Karnataka',
-  };
+// @Component({
+//   // tslint:disable-next-line:component-selector
+//   selector: 'employee-details-popup',
+//   templateUrl: 'employee-details-popup.html',
+//   styleUrls: ['./employee-details.component.scss']
+// })
+// // tslint:disable-next-line:component-class-suffix
+// class DialogContentExampleDialog  implements EmployeeDetailsComponent{
+//   constructor() {}
 
-}
+  
+//   // public employeeData = {
+//   //   City: 'Banglore ',
+//   //   Country: 'India',
+//   //   CurrentAddress: '#21 , 2nd floor, 3rd Crossroad, Marthahalli, Banglore , Karnataka',
+//   //   // tslint:disable-next-line:max-line-length
+//   //   Description: 'Lorem Ipsum industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+//   //   FirstName: 'Joseph',
+//   //   Gender: 'Male',
+//   //   LastName: 'L',
+//   //   MiddleName: 'Jorge',
+//   //   PermenentAddress: '#21 , 2nd floor, 3rd Crossroad, Marthahalli, Banglore , Karnataka',
+//   //   Pin: 504458,
+//   //   Possition: 'Mobile Developer',
+//   //   ProfileImage: '../../assets/download.jpeg',
+//   //   State: 'Karnataka',
+//   // };
+
+// }

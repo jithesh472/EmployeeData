@@ -14,7 +14,20 @@
             </mat-card-content>
             <mat-card-actions>
                 <button  mat-raised-button (click)="openDialog(item)">View Details</button>
+
+                <!-- <app-employee-details-popup ></app-employee-details-popup> -->
             </mat-card-actions>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+
+
+<mat-dialog-content class="mat-typography" style="height: 200em; width: 50em;">
+    <app-employee-details-popup [employeeData]="employeeData"></app-employee-details-popup>
+
+    
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+  
