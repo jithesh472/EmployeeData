@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { NgForm, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,8 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./AddEmployee.component.scss']
 })
 export class AddEmployeeComponent implements OnInit {
+  public data: any = {
+  }
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -33,8 +35,13 @@ export class AddEmployeeComponent implements OnInit {
   phoneControl = new FormControl('', [
     Validators.required
   ]);
+  onSubmit(form: NgForm) {
+    console.log('Your form data : ', form.value);
+  }
   ngOnInit() {
+    
   }
 
-}
 
+}
+  

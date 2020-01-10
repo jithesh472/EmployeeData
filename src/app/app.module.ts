@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // tslint:disable-next-line:max-line-length
 import { MatButtonModule, MatFormFieldModule,  MatInputModule,
   MatRippleModule, MatCardModule, MatGridListModule, MatDialogModule,
-  MatExpansionModule, MatDividerModule, MatListModule } from '@angular/material';
+  MatExpansionModule, MatDividerModule, MatListModule, MatTableModule, MatIconModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { AddEmployeeComponent } from './addEmployee/addEmployee.component';
 import { EmployeeDetailsComponent, DialogDataExampleDialog } from './employee-details/employee-details.component';
@@ -37,7 +37,9 @@ import { EmployeeDetailsComponent, DialogDataExampleDialog } from './employee-de
     MatDialogModule,
     MatExpansionModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatIconModule
 
   ],
   exports: [
@@ -50,6 +52,8 @@ import { EmployeeDetailsComponent, DialogDataExampleDialog } from './employee-de
     MatDialogModule,
     MatExpansionModule,
     MatDividerModule,
+    MatTableModule,
+    MatIconModule
   ],
   entryComponents: [
     EmployeeDetailsComponent,
